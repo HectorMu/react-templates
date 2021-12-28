@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Aos from "aos";
+import { useEffect } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/aos/dist/aos.css";
+import { Toaster } from "react-hot-toast";
+import { Routes, Route } from "react-router-dom";
+import IsAlreadyLogged from "./components/Authentication/IsAlreadyLogged";
+import IsLoggedIn from "./components/Authentication/IsLoggedIn";
+import { Layout } from "./components/Global/Layout";
+import Navbar from "./components/Navigation/Navbar";
+import Home from "./pages/Home";
+import { Index } from "./pages/Index";
 
 function App() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar theme={"secondary"} />
+      <Layout>
+        <Routes>
+          {/* <Route path="/" element={<IsAlreadyLogged view={Index} />} /> */}
+          {/* <Route path="/home" element={<IsLoggedIn view={Home} />} /> */}
+          <Route path="/" element={Index} />
+        </Routes>
+      </Layout>
+      <Toaster />
     </div>
   );
 }
