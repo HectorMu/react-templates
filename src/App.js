@@ -2,6 +2,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./css/sb-admin-2.min.css";
+import "./css/main.css";
 import "../node_modules/aos/dist/aos.css";
 import { Toaster } from "react-hot-toast";
 import { Routes, Route } from "react-router-dom";

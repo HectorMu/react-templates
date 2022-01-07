@@ -1,8 +1,7 @@
-const SidebarSection = ({ SectionName = "New section", children }) => {
+const SidebarSection = ({ Name = "New section", children }) => {
   return (
     <>
-      <div className="sidebar-heading">{SectionName}</div>
-
+      <div className="sidebar-heading">{Name}</div>
       {children}
       <hr className="sidebar-divider" />
     </>

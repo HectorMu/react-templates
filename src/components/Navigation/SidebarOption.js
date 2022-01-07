@@ -1,29 +1,26 @@
+import { useState } from "react";
 const SidebarOption = ({
-  OptionName = "New option",
+  Name = "New option",
   icon = "fas fa-question",
-  SectionName,
   children,
 }) => {
-  console.log(SectionName);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const handleNavlinkCollapse = () => setIsCollapsed(!isCollapsed);
   return (
     <li className="nav-item">
       <a
-        className="nav-link collapsed"
-        href="#a"
+        onClick={handleNavlinkCollapse}
+        className={`nav-link ${
+          isCollapsed ? `animated-grow-down` : `collapsed `
+        } `}
         data-toggle="collapse"
-        data-target={`#collapse${OptionName.replace(" ", "-")}`}
-        aria-expanded="true"
-        aria-controls={`collapse${OptionName}`}
+        aria-expanded={isCollapsed ? true : false}
+        href="#none"
       >
         <i className={icon}></i>
-        <span>{OptionName}</span>
+        <span>{Name}</span>
       </a>
-      <div
-        id={`collapse${OptionName.replace(" ", "-")}`}
-        className="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionSidebar"
-      >
+      <div className={`collapse ${isCollapsed ? `show` : ``} `}>
         <div className="bg-white py-2 collapse-inner rounded">
           <h6 className="collapse-header">Elements:</h6>
           {children}

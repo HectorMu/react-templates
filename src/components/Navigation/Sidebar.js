@@ -33,25 +33,25 @@ const Sidebar = () => {
       </li>
       <hr className="sidebar-divider" />
 
-      <SidebarSection SectionName="Section 1">
-        <SidebarOption OptionName="Option 1" icon="fas fa-times">
-          <SidebarOptionElement name="Element A" />
-          <SidebarOptionElement name="Element B" />
+      <SidebarSection Name="Section 1">
+        <SidebarOption Name="Option 1" icon="fas fa-times">
+          <SidebarOptionElement Name="Element A" />
+          <SidebarOptionElement Name="Element B" />
         </SidebarOption>
-        <SidebarOption OptionName="Option 2" icon="fas fa-cog">
-          <SidebarOptionElement name="Element A" />
-          <SidebarOptionElement name="Element B" />
+        <SidebarOption Name="Option 2" icon="fas fa-cog">
+          <SidebarOptionElement Name="Element A" />
+          <SidebarOptionElement Name="Element B" />
         </SidebarOption>
       </SidebarSection>
 
-      <SidebarSection SectionName="Section 2">
-        <SidebarOption OptionName="Option 1" icon="fas fa-times">
-          <SidebarOptionElement name="Element A" />
-          <SidebarOptionElement name="Element B" />
+      <SidebarSection Name="Section 2">
+        <SidebarOption Name="Option 1" icon="fas fa-times">
+          <SidebarOptionElement Name="Element A" />
+          <SidebarOptionElement Name="Element B" />
         </SidebarOption>
-        <SidebarOption OptionName="Option 2" icon="fas fa-cog">
-          <SidebarOptionElement name="Element A" />
-          <SidebarOptionElement name="Element B" />
+        <SidebarOption Name="Option 2" icon="fas fa-cog">
+          <SidebarOptionElement Name="Element A" />
+          <SidebarOptionElement Name="Element B" />
         </SidebarOption>
       </SidebarSection>
 

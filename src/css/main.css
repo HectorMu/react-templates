@@ -1,0 +1,13 @@
+.animated-grow-down {
+  transition: all ease-in-out 0.2s;
+}
+
+@keyframes grow-down {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 20%;
+  }
+}
