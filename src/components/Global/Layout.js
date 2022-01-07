@@ -1,3 +1,8 @@
-export const Layout = ({ children }) => {
-  return <div>{children}</div>;
+const Layout = ({ children }) => {
+  return (
+    <div id="content-wrapper" className="d-flex flex-column">
+      <div id="content">{children}</div>
+    </div>
+  );
 };
+export default Layout;
