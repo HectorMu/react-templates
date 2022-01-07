@@ -21,10 +21,7 @@ const SidebarOption = ({
         <span>{Name}</span>
       </a>
       <div className={`collapse ${isCollapsed ? `show` : ``} `}>
-        <div className="bg-white py-2 collapse-inner rounded">
-          <h6 className="collapse-header">Elements:</h6>
-          {children}
-        </div>
+        <div className="bg-white py-2 collapse-inner rounded">{children}</div>
       </div>
     </li>
   );

@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Sidebar from "./components/Navigation/Sidebar";
 import SidebarContextProvider from "./context/SidebarContextProvider";
+import NotFound from "./pages/common/NotFound";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
             {/* <Route path="/" element={<IsAlreadyLogged view={Index} />} /> */}
             {/* <Route path="/home" element={<IsLoggedIn view={Home} />} /> */}
             <Route path="/" element={<Index />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
         <Toaster />

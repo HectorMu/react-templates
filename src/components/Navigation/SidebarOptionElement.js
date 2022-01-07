@@ -1,8 +1,10 @@
-const SidebarOptionElement = ({ name = "New element" }) => {
+import { Link } from "react-router-dom";
+
+const SidebarOptionElement = ({ name = "New element", to = "/" }) => {
   return (
-    <a className="collapse-item" href="#xd">
+    <Link className="collapse-item" to={to}>
       {name}
-    </a>
+    </Link>
   );
 };
 

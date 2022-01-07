@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { SidebarContext } from "../../context/SidebarContextProvider";
 import SidebarOption from "./SidebarOption";
 import SidebarOptionElement from "./SidebarOptionElement";
@@ -14,42 +15,42 @@ const Sidebar = () => {
       }`}
       id="accordionSidebar"
     >
-      <a
+      <Link
         className="sidebar-brand d-flex align-items-center justify-content-center"
-        href="index.html"
+        to="/"
       >
         <div className="sidebar-brand-icon rotate-n-15">
           <i className="fas fa-laugh-wink"></i>
         </div>
         <div className="sidebar-brand-text mx-3">Brand</div>
-      </a>
+      </Link>
 
       <hr className="sidebar-divider my-0"></hr>
       <li className="nav-item active">
-        <a className="nav-link" href="index.html">
+        <Link className="nav-link" to="/">
           <i className="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
-        </a>
+        </Link>
       </li>
       <hr className="sidebar-divider" />
 
       <SidebarSection Name="Section 1">
         <SidebarOption Name="Option 1" icon="fas fa-times">
-          <SidebarOptionElement Name="Element A" />
-          <SidebarOptionElement Name="Element B" />
+          <SidebarOptionElement Name="Element A" to="/url" />
+          <SidebarOptionElement Name="Element B" to="/url" />
         </SidebarOption>
         <SidebarOption Name="Option 2" icon="fas fa-cog">
-          <SidebarOptionElement Name="Element A" />
-          <SidebarOptionElement Name="Element B" />
+          <SidebarOptionElement Name="Element A" to="/url" />
+          <SidebarOptionElement Name="Element B" to="/url" />
         </SidebarOption>
       </SidebarSection>
 
       <SidebarSection Name="Section 2">
-        <SidebarOption Name="Option 1" icon="fas fa-times">
+        <SidebarOption Name="Option 1">
           <SidebarOptionElement Name="Element A" />
           <SidebarOptionElement Name="Element B" />
         </SidebarOption>
-        <SidebarOption Name="Option 2" icon="fas fa-cog">
+        <SidebarOption Name="Option 2">
           <SidebarOptionElement Name="Element A" />
           <SidebarOptionElement Name="Element B" />
         </SidebarOption>
