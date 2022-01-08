@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-export const SidebarContext = React.createContext();
+export const ToggleSidebarContext = React.createContext();
 
-function SidebarContextProvider({ children }) {
+function ToggleSidebarContextProvider({ children }) {
   const [sidebarToggled, setSidebarToggled] = useState(false);
 
   const handleSidebarToggle = () => {
@@ -14,10 +14,12 @@ function SidebarContextProvider({ children }) {
     }
   };
   return (
-    <SidebarContext.Provider value={{ sidebarToggled, handleSidebarToggle }}>
+    <ToggleSidebarContext.Provider
+      value={{ sidebarToggled, handleSidebarToggle }}
+    >
       {children}
-    </SidebarContext.Provider>
+    </ToggleSidebarContext.Provider>
   );
 }
 
-export default SidebarContextProvider;
+export default ToggleSidebarContextProvider;

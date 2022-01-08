@@ -1,26 +1,37 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { SectionContext } from "../../context/SidebarSectionContextProvider";
+
 const SidebarOption = ({
-  Name = "New option",
+  OptionName = "New option",
   icon = "fas fa-question",
   children,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const handleNavlinkCollapse = () => setIsCollapsed(!isCollapsed);
+  const { SectionName } = useContext(SectionContext);
+
   return (
     <li className="nav-item">
       <a
-        onClick={handleNavlinkCollapse}
-        className={`nav-link ${
-          isCollapsed ? `animated-grow-down` : `collapsed `
-        } `}
+        className="nav-link collapsed"
+        href="#"
         data-toggle="collapse"
-        aria-expanded={isCollapsed ? true : false}
-        href="#none"
+        data-target={`#collapse${SectionName.replace(
+          " ",
+          "-"
+        )}${OptionName.replace(" ", "-")}`}
+        aria-expanded="true"
+        aria-controls="collapsePages"
       >
         <i className={icon}></i>
-        <span>{Name}</span>
+        <span>{OptionName}</span>
       </a>
-      <div className={`collapse ${isCollapsed ? `show` : ``} `}>
+      <div
+        id={`collapse${SectionName.replace(" ", "-")}${OptionName.replace(
+          " ",
+          "-"
+        )}`}
+        className="collapse"
+        data-parent="#accordionSidebar"
+      >
         <div className="bg-white py-2 collapse-inner rounded">{children}</div>
       </div>
     </li>

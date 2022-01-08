@@ -13,7 +13,7 @@ import Navbar from "./components/Navigation/Navbar";
 import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Sidebar from "./components/Navigation/Sidebar";
-import SidebarContextProvider from "./context/SidebarContextProvider";
+import ToggleSidebarContextProvider from "./context/ToggleSidebarContextProvider";
 import NotFound from "./pages/common/NotFound";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   }, []);
   return (
     <div id="wrapper">
-      <SidebarContextProvider>
+      <ToggleSidebarContextProvider>
         <Sidebar />
         <Layout>
           <Navbar />
@@ -34,7 +34,7 @@ function App() {
           </Routes>
         </Layout>
         <Toaster />
-      </SidebarContextProvider>
+      </ToggleSidebarContextProvider>
     </div>
   );
 }

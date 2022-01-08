@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { SidebarContext } from "../../context/SidebarContextProvider";
+import { ToggleSidebarContext } from "../../context/ToggleSidebarContextProvider";
+
 import SidebarOption from "./SidebarOption";
-import SidebarOptionElement from "./SidebarOptionElement";
-import SidebarSection from "./SidebarSection";
+import SidebarSectionContextProvider from "../../context/SidebarSectionContextProvider";
 
 const Sidebar = () => {
-  const { sidebarToggled, handleSidebarToggle } = useContext(SidebarContext);
+  const { sidebarToggled, handleSidebarToggle } =
+    useContext(ToggleSidebarContext);
 
   return (
     <ul
@@ -34,27 +35,43 @@ const Sidebar = () => {
       </li>
       <hr className="sidebar-divider" />
 
-      <SidebarSection Name="Section 1">
-        <SidebarOption Name="Option 1" icon="fas fa-times">
-          <SidebarOptionElement Name="Element A" to="/url" />
-          <SidebarOptionElement Name="Element B" to="/url" />
+      <SidebarSectionContextProvider SectionName="Section 1">
+        <SidebarOption OptionName="Option 1" icon="fas fa-times">
+          <Link className="collapse-item" to="/url">
+            Element A
+          </Link>
+          <Link className="collapse-item" to="/url">
+            Element B
+          </Link>
         </SidebarOption>
-        <SidebarOption Name="Option 2" icon="fas fa-cog">
-          <SidebarOptionElement Name="Element A" to="/url" />
-          <SidebarOptionElement Name="Element B" to="/url" />
+        <SidebarOption OptionName="Option 2" icon="fas fa-cog">
+          <Link className="collapse-item" to="/url">
+            Element A
+          </Link>
+          <Link className="collapse-item" to="/url">
+            Element B
+          </Link>
         </SidebarOption>
-      </SidebarSection>
+      </SidebarSectionContextProvider>
 
-      <SidebarSection Name="Section 2">
-        <SidebarOption Name="Option 1">
-          <SidebarOptionElement Name="Element A" />
-          <SidebarOptionElement Name="Element B" />
+      <SidebarSectionContextProvider SectionName="Section 2">
+        <SidebarOption OptionName="Option 1" icon="fas fa-times">
+          <Link className="collapse-item" to="/url">
+            Element A
+          </Link>
+          <Link className="collapse-item" to="/url">
+            Element B
+          </Link>
         </SidebarOption>
-        <SidebarOption Name="Option 2">
-          <SidebarOptionElement Name="Element A" />
-          <SidebarOptionElement Name="Element B" />
+        <SidebarOption OptionName="Option 2" icon="fas fa-cog">
+          <Link className="collapse-item" to="/url">
+            Element A
+          </Link>
+          <Link className="collapse-item" to="/url">
+            Element B
+          </Link>
         </SidebarOption>
-      </SidebarSection>
+      </SidebarSectionContextProvider>
 
       <div className="text-center d-none d-md-inline">
         <button
