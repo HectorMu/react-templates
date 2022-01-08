@@ -1,3 +1,5 @@
+import DefaultCard from "../components/Global/DefaultCard";
+
 const Index = () => {
   return (
     <div className="container-fluid">
@@ -9,6 +11,10 @@ const Index = () => {
         >
           <i className="fas fa-download fa-sm text-white-50"></i> Action
         </a>
+      </div>
+
+      <div className="row">
+        <div className="col-xl-2 col-md-4"></div>
       </div>
     </div>
   );
