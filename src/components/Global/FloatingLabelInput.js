@@ -17,7 +17,7 @@ const FloatingLabelInput = ({
         required
       />
       <label htmlFor={inputId} className="animated__label">
-        {placeholder}
+        {placeholder === "" ? "default" : placeholder}
       </label>
     </div>
   );
