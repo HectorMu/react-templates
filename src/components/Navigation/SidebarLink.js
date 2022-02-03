@@ -1,16 +1,25 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import useSidebarControl from "../../hooks/useSidebarControl";
+
+const defaultFont = {
+  fontSize: "16px",
+};
+const toggledFont = {
+  fontSize: "13px",
+};
 
 const SidebarLink = ({
   title = "Sidebar link",
   to = "/",
   icon = "fas fa-question",
 }) => {
+  const { sidebarToggled } = useSidebarControl();
   return (
     <li className="nav-item">
-      <Link className="nav-link" to={to}>
+      <NavLink className="nav-link" to={to}>
         <i className={icon}></i>
-        <span>{title}</span>
-      </Link>
+        <span style={sidebarToggled ? toggledFont : defaultFont}>{title}</span>
+      </NavLink>
     </li>
   );
 };

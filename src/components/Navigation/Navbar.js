@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { ToggleSidebarContext } from "../../context/ToggleSidebarContextProvider";
 import MessagesBadge from "./MessagesBadge";
 import NavbarSearchInput from "./NavbarSearchInput";
 import NotificationsBadge from "./NotificationsBadge";
 import SearchDropdown from "./SearchDropdown";
 import SessionDropdown from "./SessionDropdown";
+import useSidebarControl from "../../hooks/useSidebarControl";
 
 const Navbar = () => {
-  const { handleSidebarToggle } = useContext(ToggleSidebarContext);
+  const { handleSidebarToggle } = useSidebarControl();
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
       <button

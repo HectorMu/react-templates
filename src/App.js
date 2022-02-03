@@ -14,9 +14,11 @@ import Home from "./pages/Home";
 import Index from "./pages/Index";
 import Sidebar from "./components/Navigation/Sidebar";
 import ToggleSidebarContextProvider from "./context/ToggleSidebarContextProvider";
-import NotFound from "./pages/common/NotFound";
+import NotFound from "./pages/status/NotFound";
+import { Login } from "./pages/Auth/Login";
 
 function App() {
+  //Initializing AOS for animations
   useEffect(() => {
     Aos.init();
   }, []);
@@ -29,6 +31,7 @@ function App() {
           <Routes>
             {/* <Route path="/" element={<IsAlreadyLogged view={Index} />} /> */}
             {/* <Route path="/home" element={<IsLoggedIn view={Home} />} /> */}
+            <Route path="/Login" element={<Login />} />
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

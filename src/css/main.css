@@ -68,3 +68,14 @@ input:-webkit-autofill:active {
   box-shadow: 0 0 0 30px white inset !important;
 }
 /* Animated label input */
+
+.nav-link.active {
+  color: #fff !important;
+  font-weight: bolder;
+  pointer-events: none;
+}
+
+.nav-link.active > i {
+  color: #fff !important;
+  font-weight: bolder;
+}
