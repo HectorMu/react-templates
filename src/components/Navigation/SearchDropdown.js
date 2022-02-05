@@ -1,3 +1,4 @@
+import React from "react";
 const SearchDropdown = () => {
   return (
     <li className="nav-item dropdown no-arrow d-sm-none">

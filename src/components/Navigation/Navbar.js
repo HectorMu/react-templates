@@ -1,3 +1,4 @@
+import React from "react";
 import MessagesBadge from "./MessagesBadge";
 import NavbarSearchInput from "./NavbarSearchInput";
 import NotificationsBadge from "./NotificationsBadge";

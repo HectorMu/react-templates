@@ -1,3 +1,4 @@
+import React from "react";
 const DefaultCard = ({
   title = "Default title",
   content = "Default content",

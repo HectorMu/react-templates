@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import FloatingLabelInput from "../components/Global/FloatingLabelInput";
 

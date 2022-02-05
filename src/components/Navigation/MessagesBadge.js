@@ -1,3 +1,4 @@
+import React from "react";
 const MessagesBadge = () => {
   return (
     <li className="nav-item dropdown no-arrow mx-1">

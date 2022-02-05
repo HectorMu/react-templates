@@ -1,3 +1,4 @@
+import React from "react";
 const Loading = ({ text = "Loading...", color = "primary", small }) => {
   return (
     <div className="d-flex justify-content-center">
