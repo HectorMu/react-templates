@@ -1,7 +1,20 @@
 import React from "react";
 import { useState } from "react";
 import FloatingLabelInput from "../components/Global/FloatingLabelInput";
+import DataTable from '../components/Data/DataTable'
 
+
+const data =[
+  {
+    id:1,
+    name:"Hector"
+  },
+  {
+    id:2,
+    name:"Pancho"
+  },
+  
+]
 const Index = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,18 +34,20 @@ const Index = () => {
         inputId="email"
         placeholder={"Email"}
         value={email}
-        setValue={setEmail}
+        setValue={(e) => setEmail(e.target.value)}
       />
       <FloatingLabelInput
         type="password"
         inputId="password"
         placeholder={"Your password"}
         value={password}
-        setValue={setPassword}
+        setValue={(e) => setPassword(e.target.value)}
       />
 
       <div className="row">
-        <div className="col-xl-2 col-md-4"></div>
+        <div className="col-xl-2 col-md-4 col-xl-12">
+          <DataTable data={data} />
+        </div>
       </div>
     </div>
   );

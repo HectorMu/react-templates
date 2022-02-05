@@ -16,7 +16,7 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
  *@param {Function} refreshCallback Function to callback to refresh the table, you can provide your fetching function: default: null
  */
 const DataTable = ({
-  title,
+  title ="DataTable",
   firstColumnKey = "id",
   data = [],
   buttons = [
