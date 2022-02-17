@@ -1,8 +1,8 @@
-import { baseUrl } from "../config/API";
+import API from "../config/API";
 
 export const fetchSome = async (data) => {
   try {
-    const response = await fetch(`${baseUrl}/some`, {
+    const response = await fetch(`${API}/some`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
