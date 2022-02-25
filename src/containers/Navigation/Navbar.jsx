@@ -1,13 +1,11 @@
 import React from "react";
-import MessagesBadge from "./MessagesBadge";
-import NavbarSearchInput from "./NavbarSearchInput";
-import NotificationsBadge from "./NotificationsBadge";
-import SearchDropdown from "./SearchDropdown";
-import SessionDropdown from "./SessionDropdown";
-import useSidebarControl from "../../hooks/useSidebarControl";
+import MessagesBadge from "../../components/Navigation/Navbar/MessagesBadge";
+import NavbarSearchInput from "../../components/Navigation/Navbar/NavbarSearchInput";
+import NotificationsBadge from "../../components/Navigation/Navbar/NotificationsBadge";
+import SearchDropdown from "../../components/Navigation/Navbar/SearchDropdown";
+import SessionDropdown from "../../components/Navigation/Navbar/SessionDropdown";
 
-const Navbar = () => {
-  const { handleSidebarToggle } = useSidebarControl();
+const Navbar = ({ sidebarControl: { handleSidebarToggle } }) => {
   return (
     <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
       <button

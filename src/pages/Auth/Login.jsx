@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const Login = () => {
+const Login = () => {
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -72,3 +72,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;

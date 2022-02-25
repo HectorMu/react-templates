@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { SectionContext } from "../../context/SidebarSectionContextProvider";
+import { SectionContext } from "./Section";
 
 const SidebarDropdown = ({
   title = "New option",

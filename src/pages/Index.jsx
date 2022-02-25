@@ -1,20 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import FloatingLabelInput from "../components/Global/FloatingLabelInput";
-import DataTable from '../components/Data/DataTable'
+import DataTable from "../components/Global/DataTable";
 
-
-const data =[
+const data = [
   {
-    id:1,
-    name:"Hector"
+    id: 1,
+    name: "Hector",
   },
   {
-    id:2,
-    name:"Pancho"
+    id: 2,
+    name: "Pancho",
   },
-  
-]
+];
 const Index = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

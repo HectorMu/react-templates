@@ -2,15 +2,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 //importing local sidebar components
-import SidebarDropdown from "./SidebarDropdown";
-import SidebarSectionContextProvider from "../../context/SidebarSectionContextProvider";
-import SidebarLink from "./SidebarLink";
+import SidebarDropdown from "../../components/Navigation/Sidebar/SidebarDropdown";
+import Section from "../../components/Navigation/Sidebar/Section";
+import SidebarLink from "../../components/Navigation/Sidebar/SidebarLink";
 //Importing hooks
-import useSidebarControl from "../../hooks/useSidebarControl";
 
-const Sidebar = () => {
-  const { sidebarToggled, handleSidebarToggle } = useSidebarControl();
-
+const Sidebar = ({
+  sidebarControl: { sidebarToggled, handleSidebarToggle },
+}) => {
   return (
     <ul
       className={`navbar-nav bg-gradient-primary sidebar sidebar-dark accordion ${
@@ -36,8 +35,9 @@ const Sidebar = () => {
         </NavLink>
       </li>
       <hr className="sidebar-divider" />
+      <SidebarLink sidebarToggled={sidebarToggled} />
 
-      <SidebarSectionContextProvider SectionName="Section 1">
+      <Section SectionName="Section 1">
         <SidebarDropdown title="Option 1" icon="fas fa-times">
           <NavLink className="collapse-item" to="/url">
             Element A
@@ -54,9 +54,9 @@ const Sidebar = () => {
             Element B
           </NavLink>
         </SidebarDropdown>
-      </SidebarSectionContextProvider>
+      </Section>
 
-      <SidebarSectionContextProvider SectionName="Section 2">
+      <Section SectionName="Section 2">
         <SidebarDropdown title="Option 1" icon="fas fa-times">
           <NavLink className="collapse-item" to="/url">
             Element A
@@ -73,7 +73,7 @@ const Sidebar = () => {
             Element B
           </NavLink>
         </SidebarDropdown>
-      </SidebarSectionContextProvider>
+      </Section>
 
       <div className="text-center d-none d-md-inline">
         <button

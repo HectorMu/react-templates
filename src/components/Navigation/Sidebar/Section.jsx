@@ -2,10 +2,7 @@ import React from "react";
 
 export const SectionContext = React.createContext();
 
-const SidebarSectionContextProvider = ({
-  SectionName = "New section",
-  children,
-}) => {
+const Section = ({ SectionName = "New section", children }) => {
   return (
     <SectionContext.Provider value={{ SectionName }}>
       <div className="sidebar-heading">{SectionName}</div>
@@ -15,4 +12,4 @@ const SidebarSectionContextProvider = ({
   );
 };
 
-export default SidebarSectionContextProvider;
+export default Section;
