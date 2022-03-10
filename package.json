@@ -1,24 +1,31 @@
 {
-  "name": "mantenimiento-lab",
-  "private": true,
-  "version": "0.0.0",
+  "name": "template",
+  "version": "1.0.0",
+  "description": "a monorepo fullstack template",
+  "workspaces": [
+    "app",
+    "api"
+  ],
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build:app": "npm run build --workspace=app",
+    "start:app": "npm run dev --workspace=app",
+    "start:api": "npm run dev --workspace=api",
+    "dev": "start npm run start:api && start npm run start:app",
+    "start": "npm run build:app && npm run start:api"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HectorMu/react-templates.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HectorMu/react-templates/issues"
+  },
+  "homepage": "https://github.com/HectorMu/react-templates#readme",
   "dependencies": {
-    "aos": "^2.3.4",
-    "i": "^0.3.7",
-    "npm": "^8.5.3",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.2.0",
-    "react-dom": "^17.0.2",
-    "react-hot-toast": "^2.2.0",
-    "react-router-dom": "^6.2.2"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.7",
-    "vite": "^2.8.0"
+    "sweetalert2": "^11.4.4"
   }
 }
